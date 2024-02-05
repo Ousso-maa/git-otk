@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            position: absolute;
+            float: left;
+            left: 540px;
+            width: 280px;
+            height: 310px;
+            top: 140px;
+        }
+        label{
+            display: block;
+            left: 30px;
+        }
+        input{
+            position: relative;
+            display: block;
+            width: 250px;
+            padding: 10px;
+        }
+        button{
+            width: 275px;
+            padding: 10px;
+            background-color: green;
+        }
+    </style>
+  
+</head>
+<body>
+    
+</body>
+<form action="">
+    <fieldset>
+        <label id="colorprenom" for="prenom"><strong>Prenom :</strong></label>
+        <input type="text" id="prenom"><br>
+        <label id="colornom" for="nom"><strong>Nom :</strong></label>
+        <input type="text" id="nom"><br>
+        <label id="coloremail" for="email"><strong>Email :</strong></label>
+        <input type="text" id="email"><br>
+        <button type="button" onclick="Generer()"><strong>Generer</strong></button>
+        <button type="reset" onclick="Effacer()"><strong>Effacer</strong></button>
+    </fieldset>
+</form>
+<script src="td2.js"></script>
+</html>

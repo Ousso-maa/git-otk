@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            position: absolute;
+            float: left;
+            left: 540px;
+            top: 60px;
+        }
+        label{
+            display: block;
+            left: 30px;
+        }
+        button{
+            width: 265px;
+        }
+        input{
+            position: relative;
+            display: block;
+            width: 250px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculatrice</h1>
+    <form action="">
+        <fieldset>
+            <label for="nombre1">Nombre1</label>
+            <input type="number" id="nombre1"><br>
+            <label for="operateur">Operateur</label>
+            <input type="text" id="operateur">
+            <select id="listeoperateur" onchange="operateurField()">
+                <option value="">Selectionner un operateur:</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select><br>
+            <label for="nombre2">Nombre2</label>
+            <input type="number" id="nombre2"><br>
+            <button type="button" onclick="calculatrice()">Valider</button>
+            <label for="resultat">Resultat</label>
+            <input type="text" id="resultat"><br>
+            <label for="decimal">Decimal</label>
+            <input type="text"id="decimal" onmousemove="calculB()"><br>
+            <label for="binaire">Binaire</label>
+            <input type="text" id="binaire">
+        </fieldset>
+    </form>
+</body>
+<script>
+    function calculatrice(){
+    let nombre1 = parseInt(document.getElementById("nombre1").value);
+    let nombre2 = parseInt(document.getElementById("nombre2").value);
+    let operateur = document.getElementById("operateur").value;
+    let resultatElement = document.getElementById("resultat");
+    if(!isNaN(nombre1) && !isNaN(nombre2)){
+        switch (operateur) {
+            case '+':
+                resultatElement.value = nombre1 + nombre2;
+                break;
+            case '-':
+                resultatElement.value = nombre1 - nombre2;
+                break;
+            case '*':
+                resultatElement.value = nombre1 * nombre2;
+                break;  
+            case '/':
+                if(isNaN !== 0){
+                    resultatElement.value = nombre1 / nombre2;
+                }
+                else{
+                    resultatElement.value = "Division imposible";
+                }
+                break;      
+        
+            default:
+                resultatElement.value = "Operateur non valide";
+                break;
+        }
+    }
+    else{
+        resultatElement.value = "Veuiller entrer des entiers valides";
+    }
+}
+function operateurField(){
+    let operateurField = document.getElementById("operateur");
+    let listeoperateur = document.getElementById("listeoperateur");
+    operateurField.value = listeoperateur.value;
+}
+function calculB(){
+    var recupdeci = parseInt(document.getElementById("decimal").value);
+    var r_binaire = recupdeci.toString(2);
+    document.getElementById("binaire").value = r_binaire;
+}
+</script>
+</html>
