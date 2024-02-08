@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var x = parseInt(prompt("Entrer un entier :"));
+    function premier(x) {
+        if(isNaN(x) || x<=1){
+            alert("Entrer un nombre superieur a 1");
+            return false;
+        }
+        for(let i = 2; i <= Math.sqrt(x); i++){
+        if(x % i===0){
+            alert(x+"\tn'est pas un nombre premiere.");
+            return false;
+        }
+    }
+    alert(x+"\test un nombre premiere.");
+    return true;
+    }
+    function parfait(x){
+        if(isNaN(x) || x<=1){
+            alert("Entrer un nombre superieur a 1");
+            return false;
+        }
+        let somme = 0;
+        for(let i = 1; i < x; i++){
+            if(x % i===0){
+                somme+=i;
+            }
+        }
+            if(somme === x){
+                alert(x+"\test un nombre parfait.");
+                return true;
+            }
+            else{
+                alert(x+"\tn'est pas un nombre parfait.");
+                console.log(x+"\tn'est pas un nombre parfait.");
+                return false;
+        }
+    }
+    
+    premier(x);
+    parfait(x);
+</script>
+</html>
