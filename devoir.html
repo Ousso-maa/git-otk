@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Échange de position d'images</title>
+  <style>
+    .container {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      margin: 80px;
+    }
+    button {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container"></div>
+
+  <script>
+    var container = document.getElementById('container');
+
+    var image1 = document.createElement('img');
+    image1.src = 'image1.jpg';
+    image1.alt = 'Image 1';
+    image1.style.margin = '50px';
+
+    var image2 = document.createElement('img');
+    image2.src = 'image2.png';
+    image2.alt = 'Image 2';
+    image2.style.margin = '70px';
+
+    var button = document.createElement('button');
+    button.textContent = 'Échanger';
+    button.addEventListener('click', function() {
+      var tempSrc = image1.src;
+      image1.src = image2.src;
+      image2.src = tempSrc;
+    });
+
+    container.appendChild(image1);
+    container.appendChild(button);
+    container.appendChild(image2);
+
+    // Calcul de la largeur totale des images pour centrer le bouton
+    var totalWidth = image1.offsetWidth + image2.offsetWidth + (2 * 10); // 10px de marge entre les images
+    button.style.marginLeft = -totalWidth / 30 + 'px';
+  </script>
+</body>
+</html>

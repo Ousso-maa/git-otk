@@ -2,20 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
-    <script>
-        alert('Ousmane ');//pour afficher une information dans la page
-        alert('Ka');
-        alert('PR219 ');
-  
-        console.log('Ousmane ');//messae qui sera dans la console 
-        console.log('Ka');
-        console.log('PR219 ');
-        
-         
-  </script>
+        <div class="container mt-5" style="display: flex;">
+            <div class="card col-md-4 " style="margin-right: 20px;">
+                <div class="card-header bg-info">Ajout Personne</div>
+                <div class="card-body">
+                    <label for="">Nom</label>
+                    <input type="text" name="" id="nom" class="form-control">
+                    <label for="">Prenom</label>
+                    <input type="text" name="" id="prenom" class="form-control">
+                    <label for="">Date de Naissance</label>
+                    <input type="date" name="dn" id="date" class="form-control">
+                    <br>
+                    <button class="btn btn-info" onclick="genererEmail(),Verifier()">Generer</button>
+                    <br>
+                    <label for="">Email</label>
+                    <input type="email" name="" id="email" class="form-control"disabled>
+                    <br>
+                    <button class="btn btn-info" onclick='AjoutPersonne()'>Ajouter</button>
+             
+    
+                </div>
+            </div>
+            <div class="card col-md-8">
+                <table class="table table-stripped">
+                    <tr class=" bg-info">
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Date Naiss</th>
+                        <th>Email</th>
+                        <th>Action(s)</th>
+                    </tr>
+                    <tbody id="body">
+
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+     
+    
 </body>
+<script src="index.js"></script>
 </html>

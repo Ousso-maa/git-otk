@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <label for="newprenom">Prenom</label>
+    <input type="text" id="newprenom">
+    <button type="button" onclick="add()">Charge</button>
+</body>
+<script>
+    function add(){
+        let prenom = ['ousmane','omar','fatou','hapsatou','seydou']
+    //var x = prompt("Entrer un nom");
+    //prenom.push(x);
+    var newprenom = document.getElementById('newprenom').value;
+    prenom.push(newprenom);
+    for(let valeur of prenom){
+        document.getElementById('p1').innerHTML +=valeur+ '<br>';
+    }
+    }
+</script>
+</html>
